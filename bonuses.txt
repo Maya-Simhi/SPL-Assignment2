@@ -1,0 +1,50 @@
+BONUS CHALLENGE FORM
+--------------------
+
+For each bonus challenge you have implemented, please replace the sentence "We are not entitled to this bonus."
+with a short description of:
+
+1. How it was implemented in your code
+2. Where it was used (in which class methods).
+3. How you tested that it is working correctly.
+
+--------------------
+
+1. Fully supporting all configuration fields and avoiding the use of magic numbers
+
+We are entitled to this bonus.
+I did not use any magic numbers in the code.
+I supported all of the Gameplay's setting Hints and the clock's Warninng countDown.
+All of this was implemented in Dealer class.
+I tested it by going through the code, loggs and many test runs.
+
+--------------------
+
+2. Terminating all threads (that you created) gracefully and in reverse order to the order they were created in.
+
+We are entitled to this bonus.
+In the dealear I first teminated the players threads and after that the dealer thread (the opiste of the creation)
+Also the UI theread was created and terminate inside the temination of the player.
+I tested it by going through the code.
+
+--------------------
+
+3. Handling the config.turnTimeoutMillis value as follows:
+config.turnTimeoutMillis < 0: display nothing.
+config.turnTimeoutMillis = 0: display a timer since the last action (reshuffle or set collected).
+Note: in modes without a countdown timer the dealer must ensure there is always at least one legal set on the table.
+
+We are not entitled to this bonus.
+
+--------------------
+
+4. Making sure that the threads do not wake up unless some actual job needs to be done (e.g., a value needs to be
+changed on the display, key input needs to be handled, etc.) and the only threads created by you are:
+1 thread per player + 1 additional thread for non-human players.
+
+We are entitled to this bonus.
+The threads don't wake up unless needed:
+The players are using ArrayBlockingQueue so only if there is a key pressed they are working if not they sleep (used take).
+The dealer is sleeping unlees he needs to update the timer or place/remove cards on the table I did it with a while loop of sleep.
+There is 1 thread per player + 1 additional thread for non-human players.
+I tested this with runing the code, checking logs and using debug to see that nothing is working unless it needs to.
